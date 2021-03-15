@@ -50,3 +50,6 @@ A user that wants to know about prediction in certain place will have few option
 First the website will show global statistics about the whole world's population.
 If I want to show specific place there will be a map/list of places which I can choose from and "bar" that determines the time I want the prediction result about.
 There will be also an option to compare places in the world 
+
+our data from:
+https://ourworldindata.org/coronavirus-source-data
