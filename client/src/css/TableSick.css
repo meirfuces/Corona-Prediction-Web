@@ -1,0 +1,15 @@
+table, th, td {
+    border: 1px solid black;
+    margin: auto;
+  }
+.tableSick{
+  width: 700px;
+  flex:auto;
+  margin: auto;
+
+}
+h1{
+  text-align: center;
+  margin: auto;
+color: cornsilk;
+}
