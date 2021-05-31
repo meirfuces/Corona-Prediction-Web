@@ -1,7 +1,7 @@
 import React ,{ useEffect, useState } from "react";
 // import './css/TableSicks'
 import '../css/TableSick.css';
-import '../css/Button.css';
+import classes from '../css/Button.module.css';
 import {createApiClient} from '../api';
 import Card from './Card';
 import Button from './Butten/Button';
@@ -51,9 +51,9 @@ const TableSicks =(props)=>{
      
         </table>
          {!showMoreState?
-        <button className="showMore" onClick={()=>setshowMoreState(!showMoreState)}>  showMore </button>
+        <button className={classes.showMore} onClick={()=>setshowMoreState(!showMoreState)}>  showMore </button>
         :
-        <button className="showLess" onClick={()=>setshowMoreState(!showMoreState)}> showLess</button> 
+        <button className={classes.showLess}onClick={()=>setshowMoreState(!showMoreState)}> showLess</button> 
 } 
 </div>
 </Card>
