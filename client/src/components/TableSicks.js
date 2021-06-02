@@ -5,7 +5,8 @@ import classes from '../css/Button.module.css';
 import {createApiClient} from '../api';
 import Card from './Card';
 import Button from './Butten/Button';
-
+import {Route, Link} from 'react-router-dom';
+import TableSickDeatails from './TableSickDetails';
 const api = createApiClient();
 const TableSicks =(props)=>{
   const [tableSickState, setTableSickState] = useState(null);
@@ -24,7 +25,9 @@ const TableSicks =(props)=>{
     return (
       <Card>
   <div className="TableSicks">
-
+  <Route path = {'/welcome/${props.data}'}>
+  <TableSickDeatails/>
+  </Route>
         <table >
             <tr>
           <th>date</th>
@@ -41,7 +44,8 @@ const TableSicks =(props)=>{
     <td>{props.total_cases}</td>
     <td>{props.new_cases}</td>
     {showMoreState?     <td>{props.new_deaths}</td>: null}
-
+    <Link className={classes.showGraph} to={`/country/${props.country}`}>show all graph</Link>
+      {/* <Link className={classes.showMore} to={'/country/${props.country}'} > show all graph</Link> */}
    
 
   </tr>
@@ -54,6 +58,7 @@ const TableSicks =(props)=>{
         <button className={classes.showMore} onClick={()=>setshowMoreState(!showMoreState)}>  showMore </button>
         :
         <button className={classes.showLess}onClick={()=>setshowMoreState(!showMoreState)}> showLess</button> 
+  
 } 
 </div>
 </Card>
