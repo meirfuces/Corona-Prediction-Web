@@ -14,7 +14,7 @@ import Creator_thank from './components/pages/creator_thank';
 import MainHeader from './components/Layout/cart/mainHeader';
 import World_map from './components/pages/world_map';
 import Graph_Corona from './components/pages/graph_Corona';
-import TableSickDeatails from './components/TableSickDetails';
+import TableSickDeatails from './components/pages/TableSickDetails';
 import NotFound from './components/pages/NotFound';
 const api = createApiClient();
 
@@ -83,6 +83,7 @@ class App extends Component {
     <div className="tableSick">
        
       <main>
+      <Header></Header>
         <Switch>
         <Route path='/' exact>
           <Redirect to ='welcome'/>
@@ -111,14 +112,16 @@ this.state.data[0].continent : null}
         </Route>
         <Route path='/country/:id'><TableSickDeatails allData={this.state.allData}/></Route>
         <Route path ="/thankAndCreator"><Creator_thank/></Route>
-        <Route path ="/graph"><Graph_Corona/></Route>
+        <Route path ="/graph">
+        <MainHeader />
+          <Graph_Corona/></Route>
         <Route path ="/world_map">< World_map/></Route>
         <Route path ="*">< NotFound/></Route>
        
         </Switch>
        
       </main>
-      <Header></Header>
+
       {/* <PieChart></PieChart> */}
   {/* <div>
                 <MapChart />
