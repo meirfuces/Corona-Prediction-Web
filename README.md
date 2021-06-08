@@ -1,4 +1,14 @@
 # Corona-Prediction-Web
+# UML
+![image](https://user-images.githubusercontent.com/57175607/121154647-cb142a00-c84f-11eb-97cc-cdecf91b06f0.png)
+# The Poster
+![image](https://user-images.githubusercontent.com/57175607/121154612-c3548580-c84f-11eb-8f7f-4b44d369e34a.png)
+Home Page
+![image](https://user-images.githubusercontent.com/57175607/121154503-b20b7900-c84f-11eb-936c-572aad2fb58b.png)
+The graph 
+![image](https://user-images.githubusercontent.com/57175607/121154447-a91aa780-c84f-11eb-9063-284e391e7c45.png)
+
+
 
 Introduction: 
 1.1 Purpose: The main purpose of this document is to provide an explanation about the sofware requirement specification (srs) of Corona Forecasting- WebSite 	 
@@ -53,3 +63,5 @@ There will be also an option to compare places in the world
 
 our data from:
 https://ourworldindata.org/coronavirus-source-data
+![image](https://user-images.githubusercontent.com/57175607/121154681-d49d9200-c84f-11eb-885b-fee79c3589f3.png)
+
