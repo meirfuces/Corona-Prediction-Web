@@ -1,11 +1,17 @@
+
+
 # Corona-Prediction-Web
 # UML
 ![image](https://user-images.githubusercontent.com/57175607/121154647-cb142a00-c84f-11eb-97cc-cdecf91b06f0.png)
 # The Poster
 ![image](https://user-images.githubusercontent.com/57175607/121154612-c3548580-c84f-11eb-8f7f-4b44d369e34a.png)
-Home Page
+
+***Home Page***
+
 ![image](https://user-images.githubusercontent.com/57175607/121154503-b20b7900-c84f-11eb-936c-572aad2fb58b.png)
-The graph 
+
+***The graph***
+
 ![image](https://user-images.githubusercontent.com/57175607/121154447-a91aa780-c84f-11eb-9063-284e391e7c45.png)
 
 
