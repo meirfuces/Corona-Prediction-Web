@@ -8,7 +8,7 @@
 
 ***Home Page***
 
-![image](https://user-images.githubusercontent.com/57175607/121154503-b20b7900-c84f-11eb-936c-572aad2fb58b.png)
+![image](https://user-images.githubusercontent.com/57175607/125791995-e2cd2b40-118b-4d31-bc66-568184d7de0c.png)
 
 ***The graph***
 
