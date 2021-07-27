@@ -10,9 +10,9 @@ const Header =  props =>{
         
             <h1>corona</h1>
         </header>
-        {/* <div className = {classes['main-image']}>
+        <div className = {classes['main-image']}>
             <img src ={corona_img} alt= 'corona web'/>
-        </div> */}
+        </div>
     </React.Fragment>
     );
 };

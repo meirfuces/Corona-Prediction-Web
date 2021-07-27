@@ -4,8 +4,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 3rem;
-    background-color: #0a1803;
+    height: 5rem;
+    background-color: #a05e46;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
   
   .main-image img {
     width: 110%;
-    height: 90%;
+    height: 100%;
     object-fit: cover;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
   }
