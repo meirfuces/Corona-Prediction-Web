@@ -71,3 +71,7 @@ our data from:
 https://ourworldindata.org/coronavirus-source-data
 ![image](https://user-images.githubusercontent.com/57175607/121154681-d49d9200-c84f-11eb-885b-fee79c3589f3.png)
 
+GitHub client:
+
+https://github.com/meirfuces/cilent-corona-web.git
+
