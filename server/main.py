@@ -1,75 +1,54 @@
 from flask import Flask, request
-import filter
 
+from apscheduler.schedulers.blocking import BlockingScheduler
 from flask_cors import CORS, cross_origin
 import json
 import requests
 app = Flask(__name__)
 import pandas as pd
 import json
-# def CreateData():
-#     data = pd.read_csv("owid-covid-data.csv")
-#     df = pd.DataFrame(data)
-#     df.drop(df.iloc[:, 6:], inplace=True, axis=1)
-#     df = df[df['location'].isin(["Afghanistan", "Israel"])]
-#     # df[df['location'].isin(["Afghanistan"])]   filter
-#
-#     # display
-#     result = df.to_json(orient="table")
-#     parsed = json.loads(result)
-
-    # print(json.dumps(parsed, indent=4))
+from flask import jsonify,make_response
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-jsonFilenName = 'owid-covid-data.json'
+# jsonFilenName = 'owid-covid-data.json'
 session = requests.Session()
 
 
-dataCsv = pd.read_csv("owid-covid-data.csv")
-df = pd.DataFrame(dataCsv)
-df.drop(df.iloc[:, 6:], inplace = True, axis = 1)
-
-with open(jsonFilenName) as f:
-    jsonData = json.load(f)
-    
-with open('data.json') as f:
-    data1 = json.load(f)
+url_raw = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv'
 
 
-from flask import jsonify,make_response
+def download_data():
+    print("Covid-19 data refresh")
+
+    df_raw = pd.read_csv(url_raw)
+    df_raw.to_csv('owid-covid-latest2.csv', index=False)
+# Defining main function
+def main():
+    print(" hey there")
+    scheduler = BlockingScheduler()
+    scheduler.add_job(download_data, 'interval', hours=24)
+    # scheduler.add_job(download_data, 'interval', seconds=5)
+
+    scheduler.start()
+
+# Using the special variable
+# __name__
+if __name__ == "__main__":
+    main()
+
+    # main function
 @app.route('/',methods =['GET','POSY-'])
 
-def getTickets():
-    print('getStart')
-    page = request.args.get('page')
-    # print(page)
-    data = pd.read_csv("owid-covid-data.csv")
+def sendData():
+    data = pd.read_csv("owid-covid-latest2.csv")
+    print("hey data")
     df = pd.DataFrame(data)
-    # df.drop(df.iloc[:, 6:], inplace=True, axis=1)
-    # df = df[df['location'].isin(["Afghanistan", "Israel"])]
-    # df[df['location'].isin(["Afghanistan"])]   filter
+
+    df.sort_values(by="new_cases", ascending=False)
 
     # display
     result = df.to_json(orient="table")
+
     parsed = json.loads(result)
     return jsonify(parsed)
-# return JSONP_data
-    # return jsonify(data1)
 
-@app.route('/',methods =['POST'])
-@cross_origin(allow_headers=['Content-Type'])
-
-def postTitle():
-    print('meir ost')
-    return jsonify({
-        "name": "meir"
-    })
-
-
-@app.route('/search', methods =['put'])
-@cross_origin(allow_headers=['Content-Type'])
-def search():
-    page = session.get(data1, params={'title': 'wix'}).json()
-    output_dict = [x for x in data1 if "wix " in x['title']]
-    output_json = json.dumps(output_dict)
-    return jsonify("hello")
